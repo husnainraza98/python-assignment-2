@@ -1,0 +1,267 @@
+# 1. Write a function to calculate the area of a circle given its radius.
+
+# area = pi * r * r
+
+pi = 3.1416
+
+def area_of_circle(r):
+    return pi * r * r
+
+print(area_of_circle(3))
+
+# 2. Create a function that takes two numbers and returns their sum.
+
+
+def sum(first_num , second_num ):
+    return first_num + second_num
+
+print(sum(3,5))
+
+# 3. Write a function to find the factorial of a number using recursion
+
+def factorial(n):
+    if n < 0: 
+        return "Undefined for negative numbers"
+    result = 1
+    for i in range(1, n + 1): 
+        result *= i
+    return result
+
+print(factorial(8))
+
+  # 4.  Write a function that takes a string and returns it reversed.
+
+user_input = input("Enter a strainf : ")
+
+def converter(user_input):
+     user_input = user_input[ :: -1]
+     print(user_input)
+
+converter(user_input)
+
+def check_prime(n):
+    if n <= 1:  
+        print("The number is not prime")
+        return
+
+    for i in range(2, int(n**0.5) + 1):  
+            print("The number is not prime")
+            return
+
+    print("The number is prime")
+
+
+n = int(input("Enter the number: "))
+check_prime(n)
+
+# 6. Write a function to count the vowels in a given string.
+
+uer_input = input("Enter a String : ")
+
+
+def chack_string(uer_input):
+    count = 0
+    for chr in uer_input:
+        if chr in "aeiou":
+            count = count + 1
+    return count
+
+print(chack_string(uer_input))
+
+# 7. Create a function that takes a list of numbers and returns the largest number.
+
+array = [3 , 65,788, 8,994, 54,5 ]
+
+def findLargeNamber(array):
+    array2 = sorted(array)
+    return array2[-1]
+
+print(findLargeNamber(array))
+
+# 8. Write a function to find the nth Fibonacci number using recursion.
+
+def fibonacci(n):
+
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+nth_fibonacci = 10
+result = fibonacci(nth_fibonacci)
+print(f"The {nth_fibonacci}th Fibonacci number is {result}")
+
+# 9. Write a function to check whether a string is a palindrome.
+user_input = input("Enter the string : ")
+
+def chack_palindrome(user_input):
+    revers_string = user_input[ :: -1]
+    if revers_string == user_input:
+        print("The string is palindrome")
+    else:
+        print("The string is not palindrome")
+
+print(chack_palindrome(user_input))
+
+# 10. Create a function that takes a list of integers and returns the sum of all even numbers.
+
+array = [3 , 4 , 6 , 7 , 3 , 6 ]
+
+
+def even_sum(array):
+    cur_sum = 0
+    for num in array:
+        if num % 2 == 0 :
+            cur_sum = cur_sum + num
+    return cur_sum
+           
+print(even_sum(array))
+
+# 11. Write a function to calculate the GCD (Greatest Common Divisor) of two numbers.
+
+import math
+
+
+num1 = int(input("Enter the num1 :"))
+num2 = int(input("Enter the num2 :"))
+
+gcd = math.gcd(num1, num2)
+
+print(f"The GCD of {num1} and {num2} is {gcd}")
+
+# 12. Create a function that accepts a dictionary and returns the key with the highest value.
+
+def key_with_highest_value(d):
+  
+    if not d:
+        return None  
+    return max(d, key=d.get)
+
+data = {"a": 10, "b": 20, "c": 15}
+highest_key = key_with_highest_value(data)
+print(f"The key with the highest value is '{highest_key}'")
+
+# 13. Write a function that calculates the power of a number without using the ** operator.
+
+num = int(input("Enter the number : "))
+power = int(input("Enter the power of the number : "))
+
+def power_of_number(num , power):
+    result = 1
+    for _ in range(power):
+          result *= num
+    return result
+
+print(power_of_number(num , power))
+
+     # 14. Create a function that converts a given temperature from Celsius to Fahrenheit and vice versa.
+
+temp = int(input("Enter the temperature : "))
+scale = (input("Enter the scale C/F : "))
+
+def temp_type_converter(temp , scale ):
+    if scale == "C" :
+        return (temp * 9/5) + 32 
+    elif scale == "F":
+        return (temp - 32 ) * 5 /9
+    else:
+        print("Enter the valid scale.")
+
+print(temp_type_converter(temp , scale))
+    
+    # 15. Write a function to flatten a nested list.
+
+def flatten_list(nested_list):
+
+    flat_list = []
+    for item in nested_list:
+        if isinstance(item, list):
+            flat_list.extend(flatten_list(item)) 
+        else:
+            flat_list.append(item)
+    return flat_list
+
+
+nested = [1, [2, [3, 4]], 5, [6, [7, 8, [9]]]]
+flattened = flatten_list(nested)
+print(flattened)
+
+# 16. Create a function to check if two strings are anagrams.
+
+
+input_string = input("Enter the first string : ")
+input_2string = input("Enter the second string : ")
+
+def chack_anagrams(input_string , input_2string ):
+        if sorted(input_string) == sorted(input_2string):
+            print("True")
+        else:
+            print("False")
+
+print(chack_anagrams(input_string , input_2string))
+
+# 17. Write a function that takes a list and removes all duplicate elements.
+
+def duplicate_remove(liste):
+    liste.sort()  
+    st = 0  
+    end = 1  
+
+    while end < len(liste):
+        if liste[st] == liste[end]: 
+            end += 1
+        else: 
+            st += 1
+            liste[st] = liste[end]
+    
+    return liste[:st + 1]  
+
+liste = [1, 3, 4, 5, 6, 4, 2]
+print(duplicate_remove(liste))
+
+# 18. Create a function that takes a string and counts the frequency of each character.
+
+def count_character_frequency(s):
+    frequency = {}
+    for char in s:
+        if char in frequency:
+            frequency[char] += 1
+        else:
+            frequency[char] = 1
+    return frequency
+
+
+text = "hello world"
+char_frequency = count_character_frequency(text)
+print(char_frequency)
+
+# 19. Write a function that takes a list of employee salaries and calculates the average salary.
+
+def avrage_salaries(list):
+    return sum(list) / len(list)
+
+list = [ 3 , 4, 5,]
+print(avrage_salaries(list))
+
+# 20.Create a function to generate a random password of given length, containing uppercase, lowercase, numbers, and special characters.
+
+
+import random
+
+def pass_genrater(leng):
+    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWZYZ"
+    lowercase = "abcdefghijklmnopqrstuvwzyz"
+    num = "0987654321"
+    special_char = "!@#$%^&*_-?"
+    character = uppercase + lowercase + num + special_char
+    
+    password = ""
+    for _ in range(leng):
+        password += random.choice(character)
+    return password
+
+leng = int(input("Enter the len of password : "))
+print(pass_genrater(leng))
+    
